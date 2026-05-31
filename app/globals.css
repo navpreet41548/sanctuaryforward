@@ -742,7 +742,6 @@ p  { color: var(--gray-700); }
 .chip {
     display: inline-block;
     padding: 8px 18px;
-    border: 1px solid var(--gray-300);
     border-radius: var(--radius-pill);
     font-size: 0.8125rem;
     font-weight: 500;
@@ -1035,8 +1034,17 @@ p  { color: var(--gray-700); }
     .card { padding: 16px; gap: 14px; }
     .cards-grid .card h4 { font-size: 0.9375rem; text-align: left; }
     .cards-grid .card p { font-size: 0.8125rem; text-align: left; }
-    .team-head { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .team-card { flex: 0 0 calc((100% - 24px) / 2); }
+    /* Board / Team — clean 2-up grid instead of a carousel on mobile */
+    .team-head { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .team-nav { display: none; }
+    .team-track {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+    .team-card { flex: none; width: auto; }
     .vvp-card-body { padding: 20px; }
     .vvp-values .vvp-card-body { padding: 44px 20px 20px; }
 
@@ -1094,7 +1102,7 @@ p  { color: var(--gray-700); }
     .hero-content { padding: 48px 16px; }
     .btn-lg { padding: 13px 24px; }
     .logo-img { height: 55px; }
-    .team-card { flex: 0 0 85%; }
+    .team-track { grid-template-columns: 1fr; }
     .contact-form-card { padding: 24px; }
     body { font-size: 0.875rem; }
     .program-tagline em { font-size: 0.875rem; }
