@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="container hero-content">
         <h1>More Than a Shelter.</h1>
         <p className="hero-sub">A Safe Place to Heal, Rebuild, and Begin Again.</p>
-        <Link href="/#programs" className="btn btn-primary btn-lg">Start Your Journey</Link>
+        {/* <Link href="/#programs" className="btn btn-primary btn-lg">Start Your Journey</Link> */}
       </div>
     </section>
   );

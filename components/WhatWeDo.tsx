@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function WhatWeDo() {
   return (
-    <section className="section what-we-do">
+    <section className="section what-we-do" id="about">
       <div className="container two-col reverse">
         <div className="col-image">
           <Image

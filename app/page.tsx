@@ -17,15 +17,15 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Founder />
         <WhatWeDo />
         <Programs />
         <CorePrograms />
         <Mission />
         <Values />
         <OurMessage />
-        <Partner />
+        <Founder />
         <Governance />
+        <Partner />
       </main>
       <Footer />
     </>

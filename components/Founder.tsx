@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Founder() {
   return (
-    <section className="section founder" id="about">
+    <section className="section founder" id="founder">
       <div className="container two-col">
         <div className="col-text">
           <h2>CEO &amp; Founder</h2>

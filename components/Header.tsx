@@ -15,7 +15,8 @@ const NAV = [
   { href: "/#about",    label: "About Us" },
   { href: "/#programs", label: "Programs" },
   { href: "/#mission",  label: "Mission" },
-  { href: "/board",     label: "Board" },
+  { href: "/#founder",  label: "About Me" },
+  // { href: "/board",     label: "Board" },   // hidden for now — not needed yet
 ];
 
 export default function Header() {
