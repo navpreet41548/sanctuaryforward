@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";   // restore alongside the "Meet Our Board" link below
 
 const PANELS = [
   {
@@ -86,9 +86,9 @@ export default function Governance() {
           ))}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: 40 }}>
+        {/* <div style={{ textAlign: "center", marginTop: 40 }}>
           <Link href="/board" className="btn btn-primary">Meet Our Board</Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

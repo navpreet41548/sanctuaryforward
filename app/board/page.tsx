@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BoardClient from "@/components/BoardClient";
@@ -10,6 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function BoardPage() {
+  // The board page isn't public yet. Delete the next line to bring it back —
+  // the markup below and BoardClient are untouched and ready to go.
+  notFound();
+
   return (
     <>
       <Header />

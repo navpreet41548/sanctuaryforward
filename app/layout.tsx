@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
         {children}
         <ScrollReveal />
+        <ToastContainer position="bottom-right" autoClose={5000} newestOnTop />
       </body>
     </html>
   );

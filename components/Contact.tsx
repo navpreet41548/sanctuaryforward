@@ -1,4 +1,43 @@
+"use client";
+
+import { useState } from "react";
+import { toast } from "react-toastify";
+
+const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/sanctuary-forward";
+
 export default function Contact() {
+  const [sending, setSending] = useState(false);
+
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const payload = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(payload.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+
+      form.reset();
+      toast.success("Thank you — your message is on its way.");
+    } catch {
+      toast.error(
+        "We couldn't reach the server. Please check your connection and try again."
+      );
+    } finally {
+      setSending(false);
+    }
+  }
+
   return (
     <section className="section contact" id="contact">
       <div className="container">
@@ -9,12 +48,7 @@ export default function Contact() {
 
           {/* Form card */}
           <div className="contact-form-card">
-            <form
-              className="contact-form"
-              action="mailto:info@sanctuaryforward.org"
-              method="post"
-              encType="text/plain"
-            >
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="field">
                   <label htmlFor="firstName">First Name</label>
@@ -42,7 +76,9 @@ export default function Contact() {
                 <textarea id="message" name="message" rows={5} placeholder="Your Message" required />
               </div>
 
-              <button type="submit" className="btn btn-send">Send!!</button>
+              <button type="submit" className="btn btn-send" disabled={sending}>
+                {sending ? "Sending…" : "Send!!"}
+              </button>
             </form>
           </div>
 
@@ -52,7 +88,14 @@ export default function Contact() {
             <div className="contact-visual-body">
               <h3>More than shelter.<br />A path forward.</h3>
               <div className="contact-visual-actions">
-                <a href="#" className="btn btn-donate">Donate Now</a>
+                <a
+                  href={DONATE_URL}
+                  className="btn btn-donate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Donate Now
+                </a>
                 <div className="contact-socials">
                   <a href="#" className="social-icon" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -71,7 +114,7 @@ export default function Contact() {
         </div>
 
         {/* Contact methods */}
-        <div className="contact-methods">
+        {/* <div className="contact-methods">
           <div className="method">
             <div className="method-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -90,7 +133,7 @@ export default function Contact() {
               </svg>
             </div>
             <h4>Referral Line</h4>
-            <p>referrals@sanctuaryforward.org</p>
+            <p><a href="mailto:admin@sanctuaryforward.com">admin@sanctuaryforward.com</a></p>
             <p>+1 (000) 000-0002</p>
           </div>
 
@@ -101,10 +144,9 @@ export default function Contact() {
               </svg>
             </div>
             <h4>Write to Us</h4>
-            <p>info@sanctuaryforward.org</p>
-            <p>hello@sanctuaryforward.org</p>
+            <p><a href="mailto:admin@sanctuaryforward.com">admin@sanctuaryforward.com</a></p>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

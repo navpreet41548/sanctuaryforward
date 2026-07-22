@@ -42,8 +42,8 @@ export default function Footer() {
           <h5>Contact</h5>
           <ul>
             <li>New York State</li>
-            <li><a href="mailto:hello@sanctuaryforward.org">hello@sanctuaryforward.org</a></li>
-            <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><a href="mailto:admin@sanctuaryforward.com">admin@sanctuaryforward.com</a></li>
+            {/* <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li> */}
           </ul>
         </div>
 

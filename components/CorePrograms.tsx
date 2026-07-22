@@ -30,7 +30,7 @@ export default function CorePrograms() {
           <div className="col-text-muted">
             <p>
               Our trauma&#8209;informed, healing&#8209;centered model supports the
-              whole person — helping adults move from crisis to stability through
+              whole person. We're helping adults move from crisis to stability through
               personalized care, practical resources, and meaningful connections.
             </p>
           </div>

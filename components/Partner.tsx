@@ -16,9 +16,15 @@ export default function Partner() {
           <Link href="/contact" className="btn btn-primary" style={{ flex: 1, maxWidth: 200, textAlign: "center" }}>
             Get in Touch!
           </Link>
-          <Link href="#" className="btn btn-outline" style={{ flex: 1, maxWidth: 200, textAlign: "center" }}>
+          <a
+            href="https://www.zeffy.com/en-US/donation-form/sanctuary-forward"
+            className="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ flex: 1, maxWidth: 200, textAlign: "center" }}
+          >
             Donate
-          </Link>
+          </a>
         </div>
       </div>
     </section>
